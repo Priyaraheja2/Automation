@@ -51,4 +51,15 @@
 
       var formData = new FormData(form);
 
-      fetch(scriptURL, { method: "POS
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then((response) => {
+          swal("Done", "Submitted Successfully.", "success");
+          form.reset();
+        })
+        .catch((error) => {
+          swal("Error", "Something went wrong. please try again!", "error");
+        });
+    });
+  </script>
+</body>
+</html>
